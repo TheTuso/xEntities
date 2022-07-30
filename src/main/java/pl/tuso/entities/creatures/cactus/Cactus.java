@@ -36,7 +36,7 @@ public class Cactus extends EntityRig { // Cactus is an example entity
         this.arms.setLeftArmPose(new Rotations(0.0F, 0.0F, -15.0F));
         this.arms.setRightArmPose(new Rotations(0.0F, 0.0F, 15.0F));
 
-        this.playAnimation("cactus_rest");
+        this.playAnimation("cactus/cactus_rest");
 
         ((Attributable) this.getBukkitEntity()).getAttribute(Attribute.GENERIC_MOVEMENT_SPEED).setBaseValue(0.25F);
     }
@@ -44,16 +44,16 @@ public class Cactus extends EntityRig { // Cactus is an example entity
     @Override
     public boolean hurt(DamageSource source, float amount) {
         if (this.getHealth() < amount) {
-            this.playAnimation("cactus_death");
+            this.playAnimation("cactus/cactus_death");
         } else {
-            this.playAnimation("cactus_hurt");
+            this.playAnimation("cactus/cactus_hurt");
         }
         Bukkit.getScheduler().runTaskLater(Entities.getPlugin(Entities.class), () -> {
-            if (!this.getAnimationName().equals("cactus_death")) {
+            if (!this.getAnimationName().equals("cactus/cactus_death")) {
                 if (this.moving) {
-                    this.playAnimation("cactus_walk");
+                    this.playAnimation("cactus/cactus_walk");
                 } else {
-                    this.playAnimation("cactus_rest");
+                    this.playAnimation("cactus/cactus_rest");
                 }
             }
         }, 20);

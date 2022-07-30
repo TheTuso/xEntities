@@ -1,6 +1,6 @@
 plugins {
     id("java-library")
-    id("io.papermc.paperweight.userdev") version "1.3.7"
+    id("io.papermc.paperweight.userdev") version "1.3.8"
     id("net.minecrell.plugin-yml.bukkit") version "0.5.2"
 }
 
@@ -16,7 +16,7 @@ repositories {
 }
 
 dependencies {
-    paperDevBundle("1.19-R0.1-SNAPSHOT")
+    paperDevBundle("1.19.1-R0.1-SNAPSHOT")
 }
 
 tasks {

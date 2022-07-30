@@ -5,7 +5,6 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.Level;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.craftbukkit.v1_19_R1.entity.CraftEntity;
 import org.bukkit.craftbukkit.v1_19_R1.entity.CraftPlayer;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -16,7 +15,6 @@ import pl.tuso.entities.type.EntityRig;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Collectors;
 
 public class CactusNpc extends Cactus {
     private final ArrayList<String> animations;
@@ -31,8 +29,8 @@ public class CactusNpc extends Cactus {
         this.random = new Random(this.getId());
         this.time = 20 * (4 + this.random.nextInt(4));
 
-        this.animations.add("cactus_backflip");
-        this.animations.add("cactus_jumps");
+        this.animations.add("cactus/cactus_backflip");
+        this.animations.add("cactus/cactus_jumps");
         this.collides = false;
     }
 
@@ -58,8 +56,8 @@ public class CactusNpc extends Cactus {
         if (this.tick == this.time) {
             this.playAnimation(this.animations.get(this.random.nextInt(this.animations.size())));
         }
-        if (!this.getAnimationName().equals("cactus_rest") && this.isAnimationEnded()) {
-            this.playAnimation("cactus_rest");
+        if (!this.getAnimationName().equals("cactus/cactus_rest") && this.isAnimationEnded()) {
+            this.playAnimation("cactus/cactus_rest");
             this.time = 20 * (8 + this.random.nextInt(16));
             this.tick = 0;
         }
