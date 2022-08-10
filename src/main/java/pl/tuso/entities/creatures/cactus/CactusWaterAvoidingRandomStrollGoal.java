@@ -12,7 +12,7 @@ public class CactusWaterAvoidingRandomStrollGoal extends WaterAvoidingRandomStro
     public void start() {
         super.start();
         if (this.mob instanceof Cactus cactus) {
-            cactus.playAnimation("cactus_walk");
+            cactus.playAnimation("cactus/cactus_walk");
             cactus.moving = true;
         }
     }
@@ -21,7 +21,7 @@ public class CactusWaterAvoidingRandomStrollGoal extends WaterAvoidingRandomStro
     public void stop() {
         super.stop();
         if (this.mob instanceof Cactus cactus) {
-            cactus.playAnimation("cactus_rest");
+            cactus.playAnimation("cactus/cactus_rest");
             cactus.moving = false;
         }
     }
